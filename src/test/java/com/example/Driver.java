@@ -2,6 +2,8 @@ package com.example;
 
 import com.google.common.io.Files;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,6 +19,10 @@ import java.time.Duration;
 
 public class Driver {
     public static WebDriver driver;
+
+    public Driver() {
+        driver = getDriver("chrome");
+    }
 
     public static WebDriver getDriver(String browser) {
 
@@ -48,7 +54,7 @@ public class Driver {
         return driver;
     }
 
-    public static void wait(WebDriver driver, int n) {
+    public static void wait(int n) {
         try {
             Thread.sleep(n * 1000);
         } catch (Exception e) {
@@ -56,7 +62,7 @@ public class Driver {
         }
     }
 
-    public static void takeScreenshot(WebDriver driver) {
+    public static void takeScreenshot() {
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
             Files.copy(file, new File("D:/Education/FSD/Screenshots/screenshot1.png"));
