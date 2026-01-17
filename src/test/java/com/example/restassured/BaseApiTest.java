@@ -12,6 +12,6 @@ public class BaseApiTest {
     public void setup(){
     requestSpecification = RestAssured.given()
             .baseUri("https://reqres.in/api/")
-            .header("Content-Type","application/json");
+            .headers("Content-Type","application/json","x-api-key","reqres-free-v1");
     }
 }

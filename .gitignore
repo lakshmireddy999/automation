@@ -1,5 +1,10 @@
-vscode/
+*.vscode/
+.idea/
 *.idea/
 *.iml
 
 *.target/
+target/
+
+*.Screenshots/
+Screenshots/

@@ -24,7 +24,7 @@ public class SampleTest extends BaseApiTest {
         requestBody.put("name", "john");
         requestBody.put("job", "Engineer");
 
-        Response response = requestSpecification.body(requestBody).post("/users");
+        Response response = requestSpecification.body(requestBody).post("users");
         System.out.println(response.asPrettyString());
         Assert.assertEquals(response.statusCode(), 201);
     }

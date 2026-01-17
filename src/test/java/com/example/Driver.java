@@ -65,7 +65,7 @@ public class Driver {
     public static void takeScreenshot() {
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            Files.copy(file, new File("D:/Education/FSD/Screenshots/screenshot1.png"));
+            Files.copy(file, new File("D:/Education/FSD/automation/Screenshots/screenshot1.png"));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -73,7 +73,7 @@ public class Driver {
     }
 
     public static void explicitWait(WebDriver driver, String element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement el = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(element)));
         System.out.println(element + "can be clickable");
     }
